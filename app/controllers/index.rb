@@ -13,3 +13,21 @@ get '/clear' do
   session.clear
   redirect to('/')
 end
+
+get '/secret' do
+  if logged_in?
+    erb :secret
+  else
+    redirect to('/')
+  end
+end
+
+post '/login' do
+  user = User.authenticate(...)
+
+  if user
+    current_user = user
+  else
+    redirect to('/')
+  end
+end
