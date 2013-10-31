@@ -1,8 +1,10 @@
-def increment_counter(n = 1)
-  session[:counter] ||= 0
-  session[:counter] += n
-end
+helpers do
+  def increment_counter(n = 1)
+    session[:counter] ||= 0
+    session[:counter] += n
+  end
 
-def clear_counter
-  session.delete(:counter)
+  def clear_counter
+    session.delete(:counter)
+  end
 end
