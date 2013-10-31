@@ -4,12 +4,11 @@ get '/' do
 end
 
 post '/inc' do
-  session[:counter] ||= 0
-  session[:counter] += 1
+  increment_counter
   redirect to('/')
 end
 
 get '/clear' do
-  session.clear
+  clear_counter
   redirect to('/')
 end
